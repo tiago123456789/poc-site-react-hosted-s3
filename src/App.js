@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          STAGING Edit <code>src/App.js</code> and save to reload.
+          CHANGES MESSAGE TO TESTING GITHUB ACTION PIPELINE
         </p>
         <a
           className="App-link"
