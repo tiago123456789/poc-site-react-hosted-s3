@@ -11,9 +11,8 @@ jobs:
   build_deploy_digitalocean:
     runs-on: ubuntu-latest    
     steps:
-      
       - name: Clone code project
-      - uses: actions/checkout@v2
+        uses: actions/checkout@v2
 
       - name: Install packages and build project
         run: npm install && npm run deploy:production
