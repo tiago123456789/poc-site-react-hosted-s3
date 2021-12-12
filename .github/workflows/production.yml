@@ -4,18 +4,26 @@ on:
   push:
     branches:
       - master
+      - staging
+      - develop
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  build_deploy_digitalocean:
+    runs-on: ubuntu-latest    
     steps:
+      
+      - name: Clone code project
       - uses: actions/checkout@v2
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ secrets.AWS_REGION }}
-      - name: Build React App
+
+      - name: Install packages and build project
         run: npm install && npm run deploy:production
+
+      - name: deploy or update with new features
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          script: whoami  
+
      
