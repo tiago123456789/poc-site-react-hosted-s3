@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          CHANGES MESSAGE TO TESTING GITHUB ACTION PIPELINE
+          DEPLOY REACT APP IN DROPLET 
         </p>
         <a
           className="App-link"
