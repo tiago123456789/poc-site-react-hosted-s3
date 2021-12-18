@@ -35,7 +35,7 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           source: "build.zip"
-          target: "/var/www/html/"
+          target: "/root"
       
       - name: executing remote ssh commands using password
         uses: appleboy/ssh-action@master
@@ -43,6 +43,6 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
-          script: cd /var/www/html && unzip ./build.zip && cd ./build && cp -r ./ ../ && rm -rf ./build
+          script: cp /root/build.zip /var/www/html && cd /var/www/html && unzip ./build.zip && cd ./build && cp -r ./ ../ && rm -rf ./build
 
      
