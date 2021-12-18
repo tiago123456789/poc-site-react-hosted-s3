@@ -14,20 +14,13 @@ jobs:
       - name: Clone code project
         uses: actions/checkout@v2
 
-      - name: Install packages and build project
-        run: npm install && npm run build
-
-      - name: Zip build directory to send droplet
-        run: zip -r build.zip ./build/
-
-      
       - name: executing remote ssh commands using password
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
-          script: cd /root/site/poc-site-react-hosted-s3 && bash deploy.sh
+          script: cd /root/site/poc-site-react-hosted-s3 && git pull origin master && bash deploy.sh
 
 
      
