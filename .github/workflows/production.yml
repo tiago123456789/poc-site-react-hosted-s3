@@ -34,8 +34,8 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
-          source: "./build.zip"
-          target: "/var/www/html"
+          source: ./build.zip
+          target: /var/www/html
       
       - name: executing remote ssh commands using password
         uses: appleboy/ssh-action@master
