@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          DEPLOY REACT APP IN DROPLET 
+          GITHUB ACTIONS EXAMPLE CONTINUOUS DEPLOY
         </p>
         <a
           className="App-link"
