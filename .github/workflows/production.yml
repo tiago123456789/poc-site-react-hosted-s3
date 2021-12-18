@@ -11,9 +11,6 @@ jobs:
   build_deploy_digitalocean:
     runs-on: ubuntu-latest    
     steps:
-      - name: Clone code project
-        uses: actions/checkout@v2
-
       - name: executing remote ssh commands using password
         uses: appleboy/ssh-action@master
         with:
