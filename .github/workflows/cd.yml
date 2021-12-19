@@ -1,5 +1,4 @@
-name: CD the frontend application
-
+name: CD deploy new feature
 on:
   push:
     branches:
@@ -9,7 +8,7 @@ jobs:
   build_deploy_digitalocean:
     runs-on: ubuntu-latest    
     steps:
-      - name: deploy the new features the application
+      - name: the deploy new feature
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.HOST }}
@@ -17,4 +16,11 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           script: cd /root/site/poc-site-react-hosted-s3 && git pull origin master && bash deploy.sh
 
+      - name: Notify deploy
+        if: always()
+        uses: appleboy/discord-action@master
+        with:
+          webhook_id: ${{ secrets.WEBHOOK_ID }}
+          webhook_token: ${{ secrets.WEBHOOK_TOKEN }}
+          message: The frontend app was deployed executed ${{ job.status }}.
      
