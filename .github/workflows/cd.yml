@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - master
-      - staging
-      - develop
 
 jobs:
   build_deploy_digitalocean:
