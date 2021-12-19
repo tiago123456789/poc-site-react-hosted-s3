@@ -9,6 +9,7 @@ function App() {
         <p>
           GITHUB ACTIONS EXAMPLE CONTINUOUS DEPLOY
         </p>
+        <small>Changes to show CD using github actions</small>
       </header>
     </div>
   );
