@@ -1,4 +1,4 @@
-name: The staging pipeline
+name: CD the frontend application
 
 on:
   push:
@@ -9,13 +9,12 @@ jobs:
   build_deploy_digitalocean:
     runs-on: ubuntu-latest    
     steps:
-      - name: executing remote ssh commands using password
+      - name: deploy the new features the application
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           script: cd /root/site/poc-site-react-hosted-s3 && git pull origin master && bash deploy.sh
-
 
      
