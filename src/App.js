@@ -9,7 +9,7 @@ function App() {
         <p>
           GITHUB ACTIONS EXAMPLE CONTINUOUS DEPLOY
         </p>
-        <small>Changes to show CD using github actions to deploy S3 bucket v2</small>
+        <small>Explain abourt CD the frontend application hosted in s3</small>
       </header>
     </div>
   );
