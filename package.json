@@ -14,7 +14,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "deploy:staging": "npm run build &&  aws s3 sync ./build/ s3://poc-react-app-hosted-s3-staging  --acl public-read",
+    "deploy:staging": "npm run build && aws s3 sync ./build/ s3://poc-react-app-hosted-s3-staging  --acl public-read",
     "deploy:production": "npm run build && aws s3 sync ./build/ s3://poc-react-app-hosted-s3-production  --acl public-read",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
